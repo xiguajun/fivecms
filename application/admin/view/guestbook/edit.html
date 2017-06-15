@@ -1,0 +1,72 @@
+{include file="public:header" /}
+<div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="{:url('Index/index')}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{:url('Guestbook/index')}">留言管理</a><span class="crumb-step">&gt;</span><span>回复留言</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="{:url('Guestbook/update')}" method="post" id="myform" name="myform" enctype="multipart/form-data" >
+                 <input type="hidden" name="id" value="{$result.id}" />
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                             <tr>
+                                <th>姓名：</th>
+                                <td>
+                                    {$result.name}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>QQ：</th>
+                                <td>
+                                    {$result.qq}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>手机：</th>
+                                <td>
+                                    {$result.telephone}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>邮箱：</th>
+                                <td>
+                                    {$result.email}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>标题：</th>
+                                <td>
+                                {$result.title}    
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>内容：</th>
+                                <td>
+                                    {$result.content}
+                                </td>
+                            </tr>
+                             
+                            
+                               <tr>
+                                <th>回复内容：</th>
+                                <td><textarea name="replycontent" class="common-textarea" id="replycontent"  style="width:800px; height:100px;">{$result.replycontent}</textarea></td>
+                            </tr>
+                            
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10"  value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

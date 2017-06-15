@@ -1,0 +1,69 @@
+{include file="header" /}
+<div class="weizhi-1">当前位置： <a href="__ROOT__">首页</a> > TAG标签</div>
+<div class="main1">
+	<div class="left-3 fl">
+      	<dl class="b-box15">
+			<dt><span>最新标签</span></dt>
+                <dd>
+                	{tlist name='vo' order='tagid desc' num='50'}
+                    <a style="color:#{:five_random_color()}; font-size:{:rand(12,18)}px;" href="{:url('Tag/index',['tag'=>$vo['tag']])}">{$vo.tag}</a>
+                    {/tlist}
+				</dd>
+                <dt><span>热门标签</span></dt>
+                <dd>
+                	{tlist name='vo' order='hits desc' num='50'}
+                    <a style="color:#{:five_random_color()}; font-size:{:rand(12,18)}px;" href="{:url('Tag/index',['tag'=>$vo['tag']])}">{$vo.tag}</a>
+                    {/tlist}
+				</dd>
+                <dt><span>随机标签</span></dt>
+                <dd>
+                	{tlist name='vo' order='rand()' num='50'}
+                    <a style="color:#{:five_random_color()}; font-size:{:rand(12,18)}px;" href="{:url('Tag/index',['tag'=>$vo['tag']])}">{$vo.tag}</a>
+                    {/tlist}
+				</dd>
+		</dl>  
+    </div>
+    <div class="right-1 fr">
+    	<div class="g-box8">
+            <div class="t-2">推荐文章</div>
+            <ul>
+            	{alist name='vo' num='10'}
+                <li>
+                    <p><a href="{:url('Tag/index',['tag'=>$vo['tag']])}">{$vo.title}</a></p>
+                    <div class="dis_pi">
+                        <a href="{:url('Tag/index',['tag'=>$vo['tag']])}"><img src="{$vo.thumb}"  /></a>
+                        <span class="pic_r">{:str_cut($vo['description'],60,'')}<a href="{:url('Tag/index',['tag'=>$vo['tag']])}">[详细]</a></span>
+                    </div>
+                </li>
+                {/alist}
+            </ul>
+        </div>
+        <script type="text/javascript">jQuery(".g-box8").slide({ titCell:"li",triggerTime:0 });	</script>
+        <div class="ad-250"><img src="__PUBLIC__/style/default/images/ad2.jpg" width="250" height="250" alt="广告位" /></div>
+    	<div class="g-box3 u-3">
+        	<div class="t-1">热点阅读</div>
+            <ul class="b-box2">
+            	{alist name='vo' num='10'}
+                <li><a href="{:url('Tag/index',['tag'=>$vo['tag']])}">{:str_cut($vo['title'],50,'')}</a></li>
+                {/alist}
+            </ul>
+        </div>
+        <div class="ad-250"><img src="__PUBLIC__/style/default/images/ad2.jpg" width="250" height="250" alt="广告位" /></div>
+        <div class="g-box9">
+        	<div class="t-2">随机内容</div>
+            <ul class="b-box10">
+                {alist name='vo' num='6'}
+                <li><p><a href="{:url('Tag/index',['tag'=>$vo['tag']])}">{:str_cut($vo['title'],50,'')}</a></p><a href="{:url('Tag/index',['tag'=>$vo['tag']])}"><img src="{$vo.thumb}"  /></a></li>
+                {/alist}
+                <div class="cl"></div>
+            </ul>
+            <ul class="b-box7">
+            	{alist name='vo' num='6'}
+                <li><a href="{:url('Tag/index',['tag'=>$vo['tag']])}">{:str_cut($vo['title'],50,'')}</a></li>
+                {/alist}
+            </ul>
+        </div>
+    </div>
+	<div class="cl"></div>
+</div>
+{include file="footer" /}

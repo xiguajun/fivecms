@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>{$seo['title']}</title>
+<meta name="keywords" content="{$seo['keywords']}">
+<meta name="description" content="{$seo['description']}">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/wap/default/css/base.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/wap/default/css/wtt201311.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/wap/default/css/page.css" />
+<link rel="shortcut icon" href="__PUBLIC__/wap/default/images/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<!-- 内容 -->
+<div id="content">
+  <div class="wrapper">
+    <div class="box-left">
+        {include file="header" /}
+      <div class="box-header">搜索 <span>{$q}</span>的结果 </div>
+      <div id="post_container">
+      
+      {volist name='article_list' id='vo'}
+      <div class="box-list wx-text-thumb ">
+        <div class="wx-text"><a name="a139"></a>
+          <h3><a href="{:url('Article/show',['id'=>$vo['id']])}" aid="139" class="open" title="{$vo.title}"  target="_blank">{$vo.title}</a></h3>
+          <p class="wx-intro">	{$vo.description}...</p>
+          <div class="wx-info"><span class="wx-source">发表于{$vo.inputtime|date="Y-m-d H:i:s",###}</span>
+            <span class="wx-read">{$vo.hits}人看过</span></div>
+        </div>
+        <div class="wx-thumb"><a href="{:url('Article/show',['id'=>$vo['id']])}" aid="139" class="open" target="block"><img src="{$vo.thumb}" title="{$vo.title}"  /></a></div>
+        <div class="clearfix"></div>
+      </div>
+     {/volist}
+      
+      
+      </div>
+      
+	{$pages}   
+		
+
+
+    </div>
+      {include file="right" /}
+      {include file="footer" /}
+</body>
+</html>

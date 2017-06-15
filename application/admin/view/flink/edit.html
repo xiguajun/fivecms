@@ -1,0 +1,47 @@
+{include file="public:header" /}
+<div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="{:url('Index/index')}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{:url('Flink/index')}">友情链接</a><span class="crumb-step">&gt;</span><span>修改友情链接</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="{:url('Flink/edit')}" method="post" id="myform" name="myform" enctype="multipart/form-data" >
+                 <input type="hidden" name="id" value="{$result.id}" />
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                          <tr>
+                                <th>标题：</th>
+                                <td>
+                                    <input class="common-text" id="title" name="title" value="{$result.title}" type="text" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>地址：</th>
+                                <td>
+                                    <input class="common-text" id="url" name="url" value="{$result.url}" style=" width:800px;" type="text" >
+                                </td>
+                            </tr>
+                           
+                                <tr>
+                                <th>图片：</th>
+                                <td>{:form_image('logo',$result['logo'])}</td>
+                            </tr>
+                            
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10"  value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

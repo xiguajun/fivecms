@@ -1,0 +1,26 @@
+{include file="header" /}
+
+	
+	<div id="fh5co-main">
+		<div class="container">
+
+			<div class="row">
+
+        <div id="fh5co-board" data-columns>
+           {volist name='article_list' id='vo'}
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="{$vo.thumb}" class="image-popup fh5co-board-img" title="{$vo.title}"><img src="{$vo.thumb}" alt="{$vo.title}"></a>
+        		</div>
+        		<div class="fh5co-desc"><a href="{:url('Article/show',['id'=>$vo['id']])}">{$vo.title}</a></div>
+        	</div>
+        	{/volist}
+        	
+        	
+        </div>
+        </div>
+       </div>
+	</div>
+{include file="footer" /}
+
+	

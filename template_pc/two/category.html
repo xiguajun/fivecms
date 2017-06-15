@@ -1,0 +1,54 @@
+{include file="header" /}
+<!-- main-wrapper-inner -->
+
+          <main class="main-wrapper-inner blog-wrapper" id="container">
+
+              <div class="container">
+
+                  <div class="wrapper-inner">
+
+                    
+                      {volist name='article_list' id='vo'}
+                      <article id="post" class="post">
+
+                          <figure>
+
+                            <a href="{:url('Article/show',['id'=>$vo['id']])}"><img src="{$vo.thumb}" alt="" class="img-responsive"/></a>
+
+                          </figure>
+
+                            <section class="inner-left">
+
+                                <span class="date">{$vo.inputtime|date="Y-m-d",###}</span>
+
+                                <p class="cat-pan">浏览量：{$vo.hits}</p>
+
+                            </section>
+
+                            <section class="inner-right">
+
+                              <header>
+
+                                <h3><a href="{:url('Article/show',['id'=>$vo['id']])}">{$vo.title}</a></h3>
+
+                                </header>
+
+                              <p>{$vo.description}</p>
+
+                            </section>
+
+                            <div class="clearfix"></div>
+
+                        </article>
+
+                      {/volist}  
+                       {$pages}
+                    </div>
+
+                </div>
+
+            </main>
+
+          <!-- main-wrapper-inner -->
+
+{include file="footer" /}

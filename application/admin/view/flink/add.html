@@ -1,0 +1,48 @@
+{include file="public:header" /}
+<div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="{:url('Index/index')}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{:url('Flink/index')}">友情链接</a><span class="crumb-step">&gt;</span><span>添加友情链接</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="{:url('Flink/add')}" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%" border="1">
+                        <tbody>
+                       
+                           
+                            <tr>
+                                <th>标题：</th>
+                                <td>
+                                    <input class="common-text" id="title" name="title"  type="text" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>地址：</th>
+                                <td>
+                                    <input class="common-text" id="url" name="url"  style=" width:800px;" type="text" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>图片：</th>
+                                <td>{:form_image('logo')}</td>
+                            </tr>
+                            
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary  mr10"  value="保存后自动关闭" name="dosubmit"  type="submit">
+                                    <input class="btn btn-primary  mr10"  value="保存并继续发表" name="dosubmit_continue" type="submit">
+                                    <input class="btn" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

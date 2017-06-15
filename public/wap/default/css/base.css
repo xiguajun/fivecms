@@ -1,0 +1,63 @@
+﻿<!--好织梦（dede58.com）做最好的织梦整站模板下载网站--> 
+html{overflow-y:scroll;}
+body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote，th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0;}
+address,caption, cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+capation,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before, q:after{content:' '}
+abbr,acronym{border:0;}
+.wx-thumb img{ max-width:135px; max-height:90px;}
+.wx-thumb{float:right;}
+
+.ad {
+display: block;
+background-color: #fbfbfb;
+border: 2px dashed #bbb;
+text-align: center;
+color: #aaa;
+line-height: 20px;
+font-size: 22px;
+}
+
+
+
+@media only screen and (max-width: 640px) {
+#sidebar{ display:none;}
+#content{ max-width:360px;}
+.wrapper{ max-width:100%;}
+.box-left{ max-width:100%;box-shadow:none;}
+.fixed-nav{ max-width:360px;}
+.fixed-nav ul li a{max-width:60px;}
+.box-header{ max-width:95%}
+#post_container{ max-width:100%;}
+.box-list{ max-width:87%;}
+.wx-text{ max-width:100%;}
+.wx-thumb{ clear:both;float:none;}
+.wx-thumb img{ max-width:100%;; max-height:100%;;}
+.box-more{ max-width:100%;}
+#footer{max-width:360px;margin: 0 auto;}
+}
+
+@media only screen and (min-width:640px) and (max-width:980px) {
+	#sidebar{ display:none;}
+#content{ max-width:720px;}
+.wrapper{ max-width:100%;}
+.box-left{ max-width:100%;box-shadow:none;}
+.fixed-nav{ max-width:720px;}
+.fixed-nav ul li a{max-width:60px;}
+.box-header{ max-width:97.5%}
+#post_container{ max-width:100%;}
+.box-list{ max-width:92.7%;}
+.wx-text{ max-width:100%;}
+.wx-thumb{ clear:both;float:none;}
+.wx-thumb img{ max-width:100%;; max-height:100%;;}
+.box-more{ max-width:100%;}
+#footer{max-width:720px;margin: 0 auto;}
+}
+
+@media only screen and (min-width:1330px) {
+	
+}

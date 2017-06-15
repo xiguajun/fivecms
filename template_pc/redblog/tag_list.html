@@ -1,0 +1,34 @@
+{include file="header" /}
+
+<div id="templatemo_main_wrapper">
+	<div id="templatemo_main">
+		<div id="templatemo_main_top">
+        
+            <div id="templatemo_content">
+            
+            
+                <h2>TAG标签</h2>
+                <div style="line-height:30px;">
+                
+                {tlist name='vo' num='100'}
+               <a style="color:#{:random_color()}; text-decoration:none; font-size:{:rand(12,30)}px;" href="{:url('Index/tag',['tag'=>urlencode($vo['tag'])])}" class="t{:rand(1,5)}">{$vo.tag}</a>&nbsp;
+               {/tlist}
+          
+                
+                </div>
+                <div><br />
+                </div>
+                <p>&nbsp;</p>
+                
+              <div class="cleaner_h30"></div>
+        
+            
+            
+            </div>
+            {include file="right" /}
+        	<div class="cleaner"></div>
+        </div>
+    </div><div id="templatemo_main_bottom"></div>
+</div>
+
+{include file="footer" /}

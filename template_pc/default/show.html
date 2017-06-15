@@ -1,0 +1,85 @@
+{include file="header" /}
+<div class="weizhi-1">当前位置： {:get_catpos($catid)}</div>
+<div class="main1">
+	<div class="left-3 fl">
+    	<div class="g-con">
+            <h1 class="u-5">{$article.title}</h1> 
+            <div class="info">{$article.inputtime|date="Y-m-d H:i:s",###}  点击：<script src="__ROOT__/api.php/count/index/id/{$article.id}"></script></div>
+            
+            <div class="con">
+            	<table width="690" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                        {$article.content}<br />
+                        TAG:{:get_keywords($article['keywords'])}
+                    </td>
+                  </tr>
+                  <tr>
+                  <td>
+                  上一篇:<a href="{$pre.url}">{$pre.title}</a><br />
+                  下一篇:<a href="{$next.url}">{$next.title}</a>
+                  </td>
+                  </tr>
+                </table>
+            </div>
+           <div class="g-box10">
+            	<div class="t-2">相关内容</div>
+                <ul class="b-box12">
+                	{alist name='vo'  num='0,5'}
+                    <li><a href="{:url('Article/show',['id'=>$vo['id']])}" target="_blank"><img src="{$vo.thumb}"  />{$vo.title}</a></li>
+                    {/alist}
+                </ul>
+                <ul class="b-box13">
+                	{alist name='vo'  num='5,8'}
+                    <li><a href="{:url('Article/show',['id'=>$vo['id']])}" target="_blank">{$vo.title}</a></li>
+                    {/alist}
+                    <div class="cl"></div>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+    <div class="right-1 fr">
+    	<div class="g-box8">
+            <div class="t-2">推荐文章</div>
+            <ul>
+            	{alist name='vo' num='10'}
+                <li>
+                    <p><a href="{:url('Article/show',['id'=>$vo['id']])}">{$vo.title}</a></p>
+                    <div class="dis_pi">
+                        <a href="{:url('Article/show',['id'=>$vo['id']])}"><img src="{$vo.thumb}"  /></a>
+                        <span class="pic_r">{:str_cut($vo['description'],60,'')}<a href="{:url('Article/show',['id'=>$vo['id']])}">[详细]</a></span>
+                    </div>
+                </li>
+                {/alist}
+            </ul>
+        </div>
+        <script type="text/javascript">jQuery(".g-box8").slide({ titCell:"li",triggerTime:0 });	</script>
+        <div class="ad-250"><img src="__PUBLIC__/style/default/images/ad2.jpg" width="250" height="250" alt="广告位" /></div>
+    	<div class="g-box3 u-3">
+        	<div class="t-1">热点阅读</div>
+            <ul class="b-box2">
+            	{alist name='vo' num='10'}
+                <li><a href="{:url('Article/show',['id'=>$vo['id']])}">{:str_cut($vo['title'],50,'')}</a></li>
+                {/alist}
+            </ul>
+        </div>
+        <div class="ad-250"><img src="__PUBLIC__/style/default/images/ad2.jpg" width="250" height="250" alt="广告位" /></div>
+        <div class="g-box9">
+        	<div class="t-2">随机内容</div>
+            <ul class="b-box10">
+                {alist name='vo' num='6'}
+                <li><p><a href="{:url('Article/show',['id'=>$vo['id']])}">{:str_cut($vo['title'],50,'')}</a></p><a href="{:url('Article/show',['id'=>$vo['id']])}"><img src="{$vo.thumb}"  /></a></li>
+                {/alist}
+                <div class="cl"></div>
+            </ul>
+            <ul class="b-box7">
+            	{alist name='vo' num='6'}
+                <li><a href="{:url('Article/show',['id'=>$vo['id']])}">{:str_cut($vo['title'],50,'')}</a></li>
+                {/alist}
+            </ul>
+        </div>
+    </div>
+	<div class="cl"></div>
+</div>
+{include file="footer" /}

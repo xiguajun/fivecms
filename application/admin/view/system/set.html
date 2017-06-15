@@ -1,0 +1,92 @@
+{include file="public:header" /}
+<div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="{:url('Index/index')}">首页</a><span class="crumb-step">&gt;</span><span>系统设置</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="{:url('System/set')}" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                         
+                            <tr>
+                                <th>网站标题：</th>
+                                <td>
+                                    <input class="common-text" id="title" name="title" style=" width:800px;" value="{$detail.title}" type="text">
+                                </td>
+                            </tr>
+                           <tr>
+                                <th>网站关键词：</th>
+                                <td>
+                                    <input class="common-text" id="keywords" name="keywords" style=" width:800px;" value="{$detail.keywords}" type="text">
+                                </td>
+                            </tr>
+                           
+                            <tr>
+                                <th>网站描述：</th>
+                                <td><textarea name="description" class="common-textarea" id="description" style="width:800px; height:200px" >{$detail.description}</textarea></td>
+                            </tr>
+                            <tr>
+                            <th>网站模板：</th>
+                            <td>
+                                <select name="template_pc">
+                                    {volist name='pc_template_list' id='vo'}
+                                    <option value="{$vo.dirname}" {if condition="$vo['dirname'] eq $detail['template_pc']"}selected="selected"{/if}>{$vo.name} ( {$vo.dirname} )</option>
+                                     {/volist}
+                                </select>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th>手机模板：</th>
+                            <td>
+                                <select name="template_wap">
+                                    {volist name='wap_template_list' id='vo'}
+                                    <option value="{$vo.dirname}" {if condition="$vo['dirname'] eq $detail['template_wap']"}selected="selected"{/if}>{$vo.name} ( {$vo.dirname} )</option>
+                                     {/volist}
+                                </select>
+                            </td>
+                            </tr>
+                             <tr>
+                                <th>生成缩略图：</th>
+                                <td><input type="checkbox" name="isthumb" value="1" {if condition="$detail['isthumb'] eq 1"}checked="checked"{/if} />开启&nbsp;宽度：<input type="text" class="common-text" name="width" value="{$detail.width}" style="width:100px;" />高度：<input type="text" class="common-text" name="height" value="{$detail.height}" style="width:100px; " /></td>
+                            </tr>
+                             <tr>
+                                <th>开启水印：</th>
+                                <td><input type="checkbox" name="iswater" value="1" {if condition="$detail['iswater'] eq 1"}checked="checked"{/if} />开启 &nbsp;水印位置：<input type="radio" name="pwater" value="0" {if condition="$detail['pwater'] eq 0"}checked="checked"{/if} />随机位置<table width="400" border="1">
+                                  <tr>
+                                    <td><input type="radio" name="pwater" value="1" {if condition="$detail['pwater'] eq 1"}checked="checked"{/if}  />左上角</td>
+                                    <td><input type="radio" name="pwater" value="2" {if condition="$detail['pwater'] eq 2"}checked="checked"{/if} />上居中</td>
+                                    <td><input type="radio" name="pwater" value="3" {if condition="$detail['pwater'] eq 3"}checked="checked"{/if} />右上角</td>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="radio" name="pwater" value="4" {if condition="$detail['pwater'] eq 4"}checked="checked"{/if} />左居中</td>
+                                    <td><input type="radio" name="pwater" value="5" {if condition="$detail['pwater'] eq 5"}checked="checked"{/if} />居中</td>
+                                    <td><input type="radio" name="pwater" value="6"  {if condition="$detail['pwater'] eq 6"}checked="checked"{/if} />右居中</td>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="radio" name="pwater" value="7" {if condition="$detail['pwater'] eq 7"}checked="checked"{/if} />左下角</td>
+                                    <td><input type="radio" name="pwater" value="8" {if condition="$detail['pwater'] eq 8"}checked="checked"{/if} />下居中</td>
+                                    <td><input type="radio" name="pwater" value="9" {if condition="$detail['pwater'] eq 9"}checked="checked"{/if} />右下角</td>
+                                  </tr>
+                                  <tr><td colspan="3">水印图片：public/admin/water/water.png</td></tr>
+                                </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10"  value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

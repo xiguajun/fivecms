@@ -1,0 +1,27 @@
+{include file="header" /}
+
+<main class="main-wrapper" id="container"> 
+  
+  <!-- image Gallery -->
+  
+  <div class="wrapper">
+    <div class="">
+      <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 masonry">
+        {alist name='vo'  num='50'}
+        <li class="masonry-item grid">
+          <figure class="effect-sarah"> <img src="{$vo.thumb}" alt="" />
+            <figcaption>
+              <h2>{$vo.title}</h2>
+              <p>{$vo.description}</p>
+              <a href="{:url('Article/show',['id'=>$vo['id']])}">更多</a> </figcaption>
+          </figure>
+        </li>
+        {/alist}
+       
+      </ul>
+    </div>
+  </div>
+</main>
+
+<!-- Image Gallery --> 
+{include file="footer" /}

@@ -1,0 +1,42 @@
+
+{include file="header" /}
+<div id="templatemo_main_wrapper">
+	<div id="templatemo_main">
+		<div id="templatemo_main_top">
+        
+        	<div id="templatemo_content">
+         {volist name='article_list' id='vo'}
+    		<div class="post_section">
+           
+            	<div class="post_date">
+                	{$vo.inputtime|date="d",###}<span>{$vo.inputtime|date="m",###}</span>
+            	</div>
+                <div class="post_content">
+                                
+                                    <h2><a href="{:url('Article/show',['id'=>$vo['id']])}" style=" text-decoration:none;">{$vo.title}</a></h2>
+                
+                                    <strong>浏览:</strong>{$vo.hits} | <strong>分类:</strong> {$vo.catname}
+                                    
+                                    <a href="{:url('Article/show',['id'=>$vo['id']])}"><img src="{$vo.thumb}" alt="{$vo.title}" /></a>
+                                   <p>{$vo.description}</p>
+                </div>
+                <div class="cleaner"></div>
+            </div>
+             {/volist}   
+            
+             {$pages}
+       	  </div>
+            
+          
+          {include file="right" /}
+          <div class="cleaner"></div>
+            
+        </div>
+        
+    </div>
+    
+    <div id="templatemo_main_bottom"></div>
+    
+</div>
+
+{include file="footer" /}

@@ -1,0 +1,36 @@
+
+{include file="header" /}
+<div id="templatemo_main_wrapper">
+	<div id="templatemo_main">
+		<div id="templatemo_main_top">
+        
+        	<div id="templatemo_content">
+        
+    		<div class="post_section">
+            
+            	<div class="post_date">
+                	{$article.inputtime|date="d",###}<span>{$article.inputtime|date="m",###}</span>
+            	</div>
+                <div class="post_content">
+                
+                    <h2>{$article.title}</h2>
+                    
+                	<strong>浏览:</strong> <script src="__ROOT__/api.php/count/index/id/{$article.id}"></script> | <strong>分类:</strong> {$category['catname']}
+                    
+                   {$article.content}
+            	</div>
+
+                <div class="cleaner"></div>
+                
+            </div>
+            
+            
+       	  </div>
+            
+           {include file="right" /}
+           <div class="cleaner"></div>
+        </div>
+    </div><div id="templatemo_main_bottom"></div>
+</div>
+
+{include file="footer" /}

@@ -1,0 +1,51 @@
+{include file="public:header" /}
+<div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="{:url('Index/index')}">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">留言管理</span></div>
+        </div>
+       
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="__ROOT__/index.php/guestbook/add.html" target="_blank"><i class="icon-font"></i>前台在线留言</a>
+                        <a href="__ROOT__/index.php/guestbook/lists.html" target="_blank"><i class="icon-font"></i>前台留言列表</a>
+                        <a onclick="myform.action='{:url('Guestbook/delete')}';myform.submit();" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
+                        <a onClick="confirm_delete()" href="{:url('Guestbook/delete_all')}"><i class="icon-font"></i>删除所有留言</a>
+                        
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th class="tc" width="20"><input class="allChoose" id="check_box" onclick="selectall('id[]');" type="checkbox"></th>
+                            <th>标题</th>
+                            <th width="140">时间</th>
+                            <th width="100">状态</th>
+                            <th width="60">操作</th>
+                        </tr>
+                        {volist name='list' id='vo'}
+                        <tr align="center">
+                            <td class="tc"><input name="id[]" value="{$vo.id}" type="checkbox"></td>
+                            <td align="left">{$vo.title}
+                            </td>
+                            <td>{$vo.addtime|date="Y-m-d H:i:s",###}</td>
+                            <td>{$vo.status}</td>
+                            <td>
+                                <a class="link-update" href="{:url('Guestbook/edit',['id'=>$vo['id']])}">回复</a>
+                                <a class="link-del" href="{:url('Guestbook/delete',['id'=>$vo['id']])}">删除</a>
+                            </td>
+                        </tr>
+                        {/volist}
+                        <tr><td colspan="9">{$page}</td></tr>
+                    </table>
+                   
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

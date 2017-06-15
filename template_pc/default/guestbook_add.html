@@ -1,0 +1,87 @@
+{include file="header" /}
+<div class="weizhi-1">当前位置： <a href="__ROOT__">首页</a> > 留言列表</div>
+<div class="main1">
+	<div class="left-3 fl">
+    <div class="g-list">
+       <form action="{:url('Guestbook/add')}" method="post">
+       <table width="100%" class="g_list" border="0" style="font-size:16px;">
+      <tr>
+        <td align="right">姓名：</td>
+        <td><input  name="name" style="width:40%;" type="text" ></td>
+      </tr>
+      <tr>
+        <td align="right">Q Q：</td>
+        <td><input  name="qq" style="width:40%;"  type="text" ></td>
+      </tr>
+      <tr>
+        <td align="right">邮箱：</td>
+        <td><input  name="email" style="width:40%;"  type="text" ></td>
+      </tr>
+      <tr>
+        <td align="right">手机：</td>
+        <td><input  name="telephone" style="width:40%;"  type="text" ></td>
+      </tr>
+       <tr>
+        <td align="right">标题：</td>
+        <td><input  name="title" style="width:80%;"  type="text" ></td>
+      </tr>
+      <tr>
+        <td align="right">内容：</td>
+        <td><textarea name="content" style="resize:none;width:80%; height:100px;"></textarea></td>
+      </tr>
+      <tr>
+        <td align="right">验证码：</td>
+        <td><input  name="code" style="width:20%;display:inline;float:left;"  type="text" ><img src="__ROOT__/api.php/code/index.html" title="看不清？点击刷新" style="display:inline;  height:30px; float:left; margin-left:10px; cursor:pointer;" onclick="this.src=this.src+'?'" /></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit"  style="display: inline-block; border:none;background: #015198;padding: 5px 30px;color: #FFF;" value="提交" /></td>
+      </tr>
+    </table>
+    </form>
+    </div>
+    </div>
+    <div class="right-1 fr">
+    	<div class="g-box8">
+            <div class="t-2">推荐文章</div>
+            <ul>
+            	{alist name='vo' num='10'}
+                <li>
+                    <p><a href="{:url('Article/show',['id'=>$vo['id']])}">{$vo.title}</a></p>
+                    <div class="dis_pi">
+                        <a href="{:url('Article/show',['id'=>$vo['id']])}"><img src="{$vo.thumb}"  /></a>
+                        <span class="pic_r">{:str_cut($vo['description'],60,'')}<a href="{:url('Article/show',['id'=>$vo['id']])}">[详细]</a></span>
+                    </div>
+                </li>
+                {/alist}
+            </ul>
+        </div>
+        <script type="text/javascript">jQuery(".g-box8").slide({ titCell:"li",triggerTime:0 });	</script>
+        <div class="ad-250"><img src="__PUBLIC__/style/default/images/ad2.jpg" width="250" height="250" alt="广告位" /></div>
+    	<div class="g-box3 u-3">
+        	<div class="t-1">热点阅读</div>
+            <ul class="b-box2">
+            	{alist name='vo' num='10'}
+                <li><a href="{:url('Article/show',['id'=>$vo['id']])}">{:str_cut($vo['title'],50,'')}</a></li>
+                {/alist}
+            </ul>
+        </div>
+        <div class="ad-250"><img src="__PUBLIC__/style/default/images/ad2.jpg" width="250" height="250" alt="广告位" /></div>
+        <div class="g-box9">
+        	<div class="t-2">随机内容</div>
+            <ul class="b-box10">
+                {alist name='vo' num='6'}
+                <li><p><a href="{:url('Article/show',['id'=>$vo['id']])}">{:str_cut($vo['title'],50,'')}</a></p><a href="{:url('Article/show',['id'=>$vo['id']])}"><img src="{$vo.thumb}"  /></a></li>
+                {/alist}
+                <div class="cl"></div>
+            </ul>
+            <ul class="b-box7">
+            	{alist name='vo' num='6'}
+                <li><a href="{:url('Article/show',['id'=>$vo['id']])}">{:str_cut($vo['title'],50,'')}</a></li>
+                {/alist}
+            </ul>
+        </div>
+    </div>
+	<div class="cl"></div>
+</div>
+{include file="footer" /}

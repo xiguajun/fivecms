@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>{$seo['title']}</title>
+<meta name="keywords" content="{$seo['keywords']}">
+<meta name="description" content="{$seo['description']}">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/wap/default/css/base.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/wap/default/css/wtt201311.css" />
+<link rel="shortcut icon" href="__PUBLIC__/wap/default/images/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<div id="content">
+  <div class="wrapper">
+    <div class="box-left">
+       {include file="header" /}
+      <div class="box-header"> <span>{$category.catname}</span></div>
+      <div class="box-view">
+       <h1>{$article.title}</h1>
+       {$article.content}<br>
+       TAG:{:get_keywords($article['keywords'])}<br>
+       上一篇:<a href="{$pre.url}">{$pre.title}</a><br />
+       下一篇:<a href="{$next.url}">{$next.title}</a>
+
+      </div>
+     
+    </div>
+      {include file="right" /}
+      {include file="footer" /}
+</body>
+</html>

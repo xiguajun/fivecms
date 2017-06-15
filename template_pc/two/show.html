@@ -1,0 +1,45 @@
+{include file="header" /}
+ <!-- main-wrapper-inner -->
+
+          <main class="main-wrapper-inner blog-wrapper" id="container">
+
+              <div class="container">
+
+                  <div class="wrapper-inner">
+
+                    
+
+                      <article id="post" class="post">
+         
+                            <section class="inner-left">
+
+                                <span class="date">{$article.inputtime|date="Y-m-d",###}</span>
+                                <p class="cat-pan">浏览量：<script src="__ROOT__/api.php/count/index/id/{$article.id}"></script></p>
+
+                            </section>
+
+                            <section class="inner-right">
+
+                                <header>
+
+                                <h3>{$article.title}</h3>
+
+                                </header>
+                            {$article.content}
+                            </section>
+
+                            <div class="clearfix"></div>
+
+                        </article>
+
+
+                        
+
+                    </div>
+
+                </div>
+
+            </main>
+
+          <!-- main-wrapper-inner -->
+{include file="footer" /}

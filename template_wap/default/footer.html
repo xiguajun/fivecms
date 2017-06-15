@@ -1,0 +1,40 @@
+  <div id="ads" style="width:280px"></div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<style>
+#footer{
+    font-size: 12px;
+    background-color: #363636;
+    text-align: center;
+    color: #dadada;
+    padding:10px 0;
+}
+
+#footer p{
+    line-height: 24px;
+}
+
+#footer p a{
+    color: #dadada;
+}
+
+</style>
+<div class="clearfix"></div>
+<div id="footer">
+  <p>© 2017 fivecms<br/>
+    友情链接：{flist name='vo' num='20'}<a href="{$vo.url}">{$vo.title}</a>{/flist}</p>
+</div>
+<script src="__PUBLIC__/wap/default/js/jquery.min.js"></script>
+<script src="__PUBLIC__/wap/default/js/sidebar-follow-jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/wap/default/js/jquery.infinitescroll.js"></script>
+
+<script>
+    /* <![CDATA[ */
+    (new SidebarFollow()).init({
+        element: jQuery('#sidebar-follow'),
+        distanceToTop: 0
+    });
+    /* ]]> */
+</script>

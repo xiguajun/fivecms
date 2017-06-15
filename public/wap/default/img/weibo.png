@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+	<title>403页面不存在</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			height: 100%;
+		}
+		.notice {
+			font-family: 'Microsoft Yahei', 'Arial';
+		}
+		.notice img {
+			display: none;
+		}
+		.isMobile .notice {
+			padding: 2.3rem 0 1.6rem 0;
+			border-bottom: 1px solid #CCC;
+		}
+		.isMobile .grid {
+			display: none;
+		}
+		.isMobile iframe {
+			position: absolute;
+			bottom: 0;
+		}
+		.isMobile .notice div {
+			display: none;
+		}
+		.isWeb .notice img {
+			display: none;
+		}
+		.notice .title {
+			font-size: 35px;
+			text-align: left;
+			text-indent: 55px;
+		}
+		.notice .desp {
+			text-align: left;
+			text-indent: 55px;
+			line-height: 55px;
+			font-size: 25px;
+			color: #989898;
+			margin-top: 5px;
+		}
+		.isWeb {
+			height: 100%;
+		}
+		.notice .text {
+			padding: 40px 0;
+		}
+		.notice {
+			text-align: center;
+		}
+		.isMobile .notice img {
+			width: 55%;
+			max-width: 250px;
+			display: inline-block;
+		}
+		.grid {
+			text-align: center;
+			position: absolute;
+			bottom: 10px;
+			height: 242px;
+		}
+		.short > iframe {
+			float: left;
+			margin-right: 15px;
+			width: 312px;
+			height: 166px;
+		}
+		.short {
+			height: 166px;
+		}
+		.long, .long-recommend {
+			height: 76px;
+		}
+		.long, .short {
+			width: 976px;
+			display: inline-block;
+		}
+		.short iframe.short-recommend-3 {
+			margin-right: 0;
+		}
+		.short > iframe body {
+			margin: 0;
+		}
+		#BAIDU_SSP__wrapper_u2608389_0 {
+			position: absolute;
+			bottom: 0;
+		}
+	</style>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?ceee9be413c7c060f861fbdc07c5e813";
+		  var s = document.getElementsByTagName("script")[0];
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
+<body>
+	<div class="notice">
+		<img src="403.png" />
+		<div class="text">
+			<div class="title">403 Forbidden</div>
+			<div class="desp">对不起，您访问的页面或站点不存在。</div>
+		</div>
+	</div>
+	<div id="content"></div>
+	<div class="grid">
+		<div class="short">
+			<iframe class="short-recommend-1" src="" frameborder="0" width="100%"></iframe>
+			<iframe class="short-recommend-2" src="" frameborder="0" width="100%"></iframe>
+			<iframe class="short-recommend-3" src="" frameborder="0" width="100%"></iframe>
+		</div>
+		<div class="long">
+			<iframe class="long-recommend" src="" frameborder="0" width="100%"></iframe>
+		</div>
+	</div>
+    <script type="text/javascript">
+    	var cpro_id = "u2608389";
+
+		var cpro_phid = "u2610943";
+	    var cpro_phwidth = "auto";
+	    var cpro_phheight = "35";
+
+        window.onload = function () {
+            var body = document.getElementsByTagName('body')[0];
+            var script = document.createElement('script');
+            script.setAttribute('type', 'text/javascript');
+
+			var short1 = document.getElementsByClassName('short-recommend-1')[0];
+			var short2 = document.getElementsByClassName('short-recommend-2')[0];
+			var short3 = document.getElementsByClassName('short-recommend-3')[0];
+			var long = document.getElementsByClassName('long-recommend')[0];
+
+            // 移动设备
+            if (detectMobile()) {
+            	body.className = 'isMobile';
+            	// http://cpucdn.baidu.com/bae/bae.min.js
+                script.setAttribute('src', 'http://su.bdimg.com/static/dspui/js/hum.js');
+                body.appendChild(script);
+            }
+            else {
+            	body.className = 'isWeb';
+            	short1.setAttribute('src', 'short1.html');
+            	short2.setAttribute('src', 'short2.html');
+            	short3.setAttribute('src', 'short3.html');
+				long.setAttribute('src', 'long.html');
+            }
+        }
+        function detectMobile() {
+            if( navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i))
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$seo['title']}</title>
+<meta name="keywords" content="{$seo['keywords']}">
+<meta name="description" content="{$seo['description']}">
+<link  rel="stylesheet" href="__PUBLIC__/style/default/style.css" type="text/css" />
+<link  rel="stylesheet" href="__PUBLIC__/style/default/page.css" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/style/default/js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/default/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/style/default/js/gotoTop.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".backToTop").goToTop();
+	$(window).bind('scroll resize',function(){
+		$(".backToTop").goToTop({
+			pageWidth:960,
+			duration:0
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div class="top">
+	<span>
+        <a href=""onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('__ROOT__');">设为首页</a> - 
+        <a href="javascript:window.external.AddFavorite('__ROOT__','{$seo['title']}')">加入收藏</a> -
+        <a href="__ROOT__/wap.php">手机版</a>
+    </span>
+    360仿站，专注仿站！ 
+</div>
+<div class="head">
+	<div class="logo fl"><a href="__ROOT__"><img src="__PUBLIC__/style/default/images/logo.jpg" /></a></div>
+    <div class="tagso fr">
+        <div class="serach fl">
+            <form action="{:url('Search/index')}" name="get">
+                <input name="q" type="text" class="search-keyword fl" id="search-keyword" value="站内搜索" onfocus="if(this.value=='站内搜索'){this.value='';}"  onblur="if(this.value==''){this.value='站内搜索';}"/>
+                <button type="submit" class="search-submit fl">搜索</button>
+            </form>
+        </div>
+        热搜：{tlist name='vo' order='rand()' num='5'}<a style="color:#{:five_random_color()}; font-size:{:rand(12,18)}px;" href="{:url('Tag/index',['tag'=>$vo['tag']])}">{$vo.tag}</a> {/tlist}
+    </div>
+    <div class="cl"></div>
+</div>
+<div class="nav1">
+	<ul class="n-box1">
+    	<li class="u-1"><a href="__ROOT__/">首页</a></li>
+        {clist name='vo' num='8'}
+      	<li><a href="{:url('Category/lists',['catid'=>$vo['catid']])}">{$vo.catname}</a></li>
+      	{/clist}
+    </ul>
+</div>

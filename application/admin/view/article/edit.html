@@ -1,0 +1,93 @@
+{include file="public:header" /}
+<div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="{:url('Index/index')}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{:url('Article/index')}">文章管理</a><span class="crumb-step">&gt;</span><span>修改文章</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="{:url('Article/edit')}" method="post" id="myform" name="myform" enctype="multipart/form-data" >
+                 <input type="hidden" name="id" value="{$result.id}" />
+                 <ul class="admin_tab">
+                    <li><a class="active">常规选项</a></li>
+                    <li><a>高级选项</a></li>
+                    </ul>
+                    <div class="admin_tab_cont" style="display:block;">
+                    
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                         <tr>
+                                <th width="80">栏目：</th>
+                                <td>
+                                 <select name="catid">
+                                    {volist name='list' id='vo'}
+                                    <option value="{$vo.catid}" {if condition="$vo['catid'] eq $result['catid']"}selected="selected"{/if}>{:str_repeat("&nbsp;└─&nbsp;",$vo['level'])}{$vo.catname}</option>
+                                     {/volist}
+                                    </select>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <th>标题：</th>
+                                <td>
+                                    <input class="common-text" id="title" name="title" style=" width:800px;" onBlur="$.post('{:url('Article/get_keywords')}?number=3&sid='+Math.random()*5, {data:$('#title').val()}, function(data){if(data && $('#keywords').val()=='') $('#keywords').val(data); })"  value="{$result.title}" type="text">
+                                </td>
+                            </tr>
+                             <tr>
+                                <th>关键词：</th>
+                                <td>
+                                    <input class="common-text" id="keywords" name="keywords" style=" width:400px;"  value="{$result.keywords}" type="text">多关键词之间用空格或者“,”隔开
+                                </td>
+                            </tr>
+                                <tr>
+                                <th>缩略图：</th>
+                                <td>{:form_image('thumb',$result['thumb'])}</td>
+                            </tr>
+                            
+                               <tr>
+                                <th>描述：</th>
+                                <td><textarea name="description" class="common-textarea" id="description"  style="width:800px; height:100px;">{$result.description}</textarea></td>
+                            </tr>
+                            <tr>
+                                <th>内容：</th>
+                                <td>{:form_editor('content',$result['content'])}</td>
+                            </tr>
+                           
+                        </tbody></table>
+                        </div>
+                   
+                    
+                     <div class="admin_tab_cont">
+                    
+                    <table class="insert-tab" width="100%" border="1">
+                        <tbody>
+                           <tr>
+                                <th width="80">组图：</th>
+                                <td>{:form_images('gallery',$result['gallery'])}</td>
+                            </tr>
+                          
+                        </tbody>
+                        
+                        </table>
+                    
+                    </div>
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input class="btn btn-primary  mr10"  value="提交" name="dosubmit"  type="submit">
+                                    <input class="btn" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+                        </table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+ <div class="box-right" id="sidebar">
+      <div class="mbox">
+        <div class="mbox-content">
+          <p style="float:left;"><img src="__PUBLIC__/wap/default/img/z.jpg" width="60" height="60" style="margin-right: 10px;margin-bottom: 10px;border:1px solid #ccc;float:left;">劝君更尽一杯酒，西出阳关无故人。</p>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div id="sidebar-follow">
+        <div class="mbox-rank" style="width:260px;">
+          <div class="mbox-rank-header">最新文章</div>
+          <div class="mbox-rank-content">
+            <ul>   
+              {alist name='vo' num='10'}
+                  <li><i class="colorD16F67">{$key+1}</i>
+<a href="{:url('Article/show',['id'=>$vo['id']])}">{$vo.title}</a></li>
+              {/alist}
+
+           </ul>
+          </div>
+        </div>
